@@ -490,8 +490,7 @@ h2 {
   /* ========================
      FORMULARIO
   ======================== */
-  /* Estilo para la sección de contacto */
-/* Estilo para la sección de contacto */
+
 .contacto-formulario {
     background-color: var(--color-fondo);
     padding: 60px 20px;
@@ -605,8 +604,8 @@ h2 {
     font-size: 16px;
   }
   
-  /* Responsivo */
-  @media (max-width: 768px) {
+ /* Responsivo */
+@media (max-width: 768px) {
     .contacto-formulario h2 {
       font-size: 2rem;
     }
@@ -617,38 +616,47 @@ h2 {
   
     .contacto-formulario form {
       padding: 20px;
+      width: 100%; /* Asegura que el formulario ocupe el 100% del contenedor */
+      box-sizing: border-box; /* Incluye el padding dentro del tamaño total */
+      max-width: 100%; /* Limita el ancho máximo al 100% */
     }
   
     .form-group label {
       font-size: 14px;
     }
   
+    input, textarea {
+      width: 100%; /* Asegura que los campos de entrada ocupen todo el ancho disponible */
+      box-sizing: border-box; /* Incluye el padding dentro del tamaño total */
+    }
+  
     /* Estilo para el botón de envío con ícono */
-.btn {
-    padding: 14px 30px;
-    background-color: var(--color-principal);
-    color: white;
-    border: none;
-    border-radius: var(--radio-borde);
-    font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-    align-self: center;
-    display: flex; /* Hacemos que el botón sea flexible */
-    align-items: center; /* Centramos el ícono y texto verticalmente */
-    gap: 10px; /* Espacio entre el ícono y el texto */
-  }
+    .btn {
+      padding: 14px 30px;
+      background-color: var(--color-principal);
+      color: white;
+      border: none;
+      border-radius: var(--radio-borde);
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+      align-self: center;
+      display: flex; /* Hacemos que el botón sea flexible */
+      align-items: center; /* Centramos el ícono y texto verticalmente */
+      gap: 10px; /* Espacio entre el ícono y el texto */
+      width: 100%; /* Asegura que el botón ocupe el 100% del contenedor */
+      box-sizing: border-box; /* Incluye el padding dentro del tamaño total */
+    }
   
-  .btn i {
-    font-size: 20px; /* Tamaño del ícono */
-  }
+    .btn i {
+      font-size: 20px; /* Tamaño del ícono */
+    }
   
-  .btn:hover {
-    background-color: var(--color-principal-hover);
-    transform: translateY(-2px);
-  }
-  
+    .btn:hover {
+      background-color: var(--color-principal-hover);
+      transform: translateY(-2px);
+    }
   }
   
   
