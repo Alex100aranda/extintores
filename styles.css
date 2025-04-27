@@ -664,50 +664,76 @@ h2 {
   }
   
   /* Responsivo */
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     .contacto-formulario h2 {
-      font-size: 2rem;
+        font-size: 2rem;
     }
-  
+
     .contacto-formulario p {
-      font-size: 1rem;
+        font-size: 1rem;
     }
-  
+
     .contacto-formulario form {
-      padding: 20px;
+        padding: 20px;
+        width: 100%; /* Asegura que el formulario ocupe todo el ancho del contenedor */
+        box-sizing: border-box; /* Incluye el padding en el cálculo del ancho */
     }
-  
+
+    .form-group {
+        width: 100%; /* Asegura que cada grupo de formulario ocupe todo el ancho disponible */
+        margin-bottom: 15px;
+    }
+
     .form-group label {
-      font-size: 14px;
+        font-size: 14px;
+        display: block; /* Asegura que las etiquetas estén en su propia línea */
+        margin-bottom: 5px; /* Espacio entre la etiqueta y el campo */
     }
-  
-    /* Estilo para el botón de envío con ícono */
-.btn {
-    padding: 14px 30px;
-    background-color: var(--color-principal);
-    color: white;
-    border: none;
-    border-radius: var(--radio-borde);
-    font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-    align-self: center;
-    display: flex; /* Hacemos que el botón sea flexible */
-    align-items: center; /* Centramos el ícono y texto verticalmente */
-    gap: 10px; /* Espacio entre el ícono y el texto */
-  }
-  
-  .btn i {
-    font-size: 20px; /* Tamaño del ícono */
-  }
-  
-  .btn:hover {
-    background-color: var(--color-principal-hover);
-    transform: translateY(-2px);
-  }
-  
-  }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%; /* Hace que los campos de entrada ocupen todo el ancho disponible */
+        padding: 10px;
+        border-radius: var(--radio-borde);
+        border: 1px solid #ccc;
+        font-size: 16px;
+        box-sizing: border-box; /* Incluye el padding en el cálculo del ancho */
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        border-color: var(--color-principal); /* Cambia el color del borde al hacer foco */
+        outline: none;
+    }
+
+    /* Ajuste del botón de envío */
+    .btn {
+        padding: 14px 30px;
+        background-color: var(--color-principal);
+        color: white;
+        border: none;
+        border-radius: var(--radio-borde);
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.2s ease;
+        align-self: center;
+        display: flex; /* Hacemos que el botón sea flexible */
+        align-items: center; /* Centramos el ícono y texto verticalmente */
+        gap: 10px; /* Espacio entre el ícono y el texto */
+        width: 100%; /* Asegura que el botón ocupe todo el ancho disponible */
+    }
+
+    .btn i {
+        font-size: 20px; /* Tamaño del ícono */
+    }
+
+    .btn:hover {
+        background-color: var(--color-principal-hover);
+        transform: translateY(-2px);
+    }
+}
+
   
   
   /* ========================
