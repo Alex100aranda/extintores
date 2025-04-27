@@ -60,4 +60,18 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+
+  // Hacer que las preguntas sean clickeables y muestren las respuestas
+document.addEventListener("DOMContentLoaded", function() {
+    const faqQuestions = document.querySelectorAll(".faq-question");
+  
+    faqQuestions.forEach(question => {
+      question.addEventListener("click", function() {
+        const faqItem = question.parentElement;
+        faqItem.classList.toggle("active");
+      });
+    });
+  });
+  
   

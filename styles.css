@@ -287,84 +287,7 @@
     }
   }
 
-  /* ========================
-   CAPACITACIÓN
-======================== */
-.capacitacion {
-    background-color: #fff3e0;
-    padding: 80px 20px;
-  }
-  
-  .capacitacion-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 40px;
-    max-width: var(--max-width);
-    margin: auto;
-  }
-  
-  .capacitacion-texto {
-    flex: 1 1 500px;
-  }
-  
-  .capacitacion-texto h2 {
-    font-size: 2.2rem;
-    color: var(--rojo-extintor);
-    margin-bottom: 20px;
-  }
-  
-  .capacitacion-texto p {
-    font-size: 18px;
-    color: var(--color-texto);
-    margin-bottom: 20px;
-  }
-  
-  .capacitacion-texto ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 30px;
-  }
-  
-  .capacitacion-texto li {
-    font-size: 16px;
-    color: var(--color-texto);
-    margin-bottom: 12px;
-  }
-  
-  .capacitacion-texto li i {
-    color: var(--rojo-extintor);
-    margin-right: 10px;
-  }
-  
-  /* Botón */
-  .btn-capacitacion {
-    display: inline-block;
-    background-color: var(--rojo-extintor);
-    color: white;
-    padding: 12px 24px;
-    border-radius: var(--radio-borde);
-    font-weight: bold;
-    transition: background 0.3s ease, transform 0.3s ease;
-  }
-  
-  .btn-capacitacion:hover {
-    background-color: var(--rojo-extintor-hover);
-    transform: translateY(-2px);
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .capacitacion-content {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .capacitacion-texto ul {
-      text-align: left;
-    }
-  }
-  
+
   /* ========================
    CAPACITACIÓN
 ======================== */
@@ -482,6 +405,64 @@
     }
   }
   
+
+  /* SECCION FAQ S */
+.faqs {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .faq-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 20px;
+  }
+  
+  .faq-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .faq-question {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .faq-answer {
+    font-size: 16px;
+    color: #555;
+    display: none; /* Para ocultar las respuestas al inicio */
+  }
+  
+  .faq-question:hover {
+    color: #0073e6;
+  }
+  
+  .faq-item.active .faq-answer {
+    display: block;
+  }
+
+  .fac-h2{
+color: red;
+margin: 20px;
+
+  }
+  
+  /* Asegura que se vean bien en dispositivos pequeños */
+  @media (max-width: 768px) {
+    .faq-container {
+      grid-template-columns: 1fr;
+    }
+    .fac-h2{
+        color: red;
+        margin: 20px;
+  }
+}
 
   /* ========================
    TIPOS DE EXTINTORES
