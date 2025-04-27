@@ -37,6 +37,9 @@ h2 {
      NAVBAR
 ======================== */
 
+/* ========================
+     NAVBAR
+======================== */
 .navbar {
     position: fixed;
     top: 0;
@@ -51,22 +54,26 @@ h2 {
     box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
 }
 
+/* Logo dentro del navbar */
 .navbar .logo {
     font-size: 24px;
     font-weight: bold;
-    margin-left: 20px; /* Espaciado para el logo */
+    margin-left: 0; /* El logo ya no tiene margen izquierdo */
 }
 
+/* Menú hamburguesa (tres rayitas) */
 .menu-toggle {
-    display: none;
+    display: none; /* Solo se muestra en pantallas pequeñas */
     cursor: pointer;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     height: 24px;
     width: 30px;
-    position: absolute;  /* Alineamos el botón hamburguesa al lado derecho */
-    right: 20px;  /* Margen de 20px desde el borde derecho */
+    position: absolute;  /* Lo posicionamos de forma absoluta dentro del navbar */
+    right: 20px;  /* Alineamos el botón de hamburguesa con un margen de 20px del borde derecho */
+    top: 50%; /* Lo alineamos verticalmente al centro */
+    transform: translateY(-50%); /* Centrado exacto */
     z-index: 2000; /* Asegura que el botón quede encima de otros elementos */
 }
 
@@ -77,12 +84,13 @@ h2 {
     border-radius: 5px;
 }
 
+/* Enlaces del menú */
 .nav-links {
     list-style: none;
     display: flex;
     gap: 15px;
     justify-content: flex-end; /* Alineamos los enlaces al final */
-    margin-right: 20px; /* Margin to align to the right */
+    margin-right: 20px; /* Ajuste de margen derecho */
 }
 
 .nav-links a {
@@ -91,6 +99,7 @@ h2 {
     font-weight: bold;
 }
 
+/* Estilo en dispositivos móviles */
 @media (max-width: 768px) {
     /* En pantallas pequeñas, el menú se posiciona con flexbox */
     .nav-links {
@@ -109,8 +118,9 @@ h2 {
         display: flex; /* Muestra el menú cuando está activo */
     }
 
+    /* Muestra el botón de hamburguesa */
     .menu-toggle {
-        display: flex; /* Muestra el botón de hamburguesa */
+        display: flex;
     }
 
     .nav-links a {
@@ -127,10 +137,7 @@ h2 {
 }
 
 
-/* ========================
-     HERO CON BANNER DE FONDO
-======================== */
-
+/* HERO CON BANNER DE FONDO */
 /* HERO CON BANNER DE FONDO */
 .hero {
     height: 80vh;
@@ -143,6 +150,8 @@ h2 {
     justify-content: center;
     color: white;
     text-align: center;
+    margin-top: 0; /* Asegura que no haya margen superior que cause el corte */
+    padding-top: 50px; /* Añadido para dar espacio en la parte superior en dispositivos móviles */
 }
 
 .hero-overlay {
@@ -184,7 +193,6 @@ h2 {
     background-color: var(--color-principal-hover);
 }
 
-
 /* ========================
      RESPONSIVO
 ======================== */
@@ -193,6 +201,8 @@ h2 {
     .hero {
         height: 60vh; /* Ajustamos el tamaño de la imagen en pantallas pequeñas */
         padding: 0 15px; /* Menos padding en los laterales */
+        margin-top: 0; /* Aseguramos que no haya margen superior extra */
+        padding-top: 70px; /* Añadido padding-top para dar espacio al navbar fijo */
     }
 
     .hero-content h1 {
@@ -212,6 +222,7 @@ h2 {
 @media (max-width: 480px) {
     .hero {
         height: 50vh; /* Aún más pequeña en pantallas más pequeñas */
+        padding-top: 70px; /* Añadido padding-top para más espacio */
     }
 
     .hero-content h1 {
@@ -432,8 +443,26 @@ h2 {
       max-width: 150px; /* Ajuste de tamaño para pantallas pequeñas */
     }
   }
-  
 
+  /* Estilo para el botón */
+.btn-capacitacion {
+    background-color: var(--color-principal);
+    padding: 14px 30px;
+    border-radius: var(--radio-borde);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex; /* Cambiar a inline-flex para centrar el texto */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    text-align: center; /* Asegura que el texto esté centrado */
+    width: auto; /* Ajusta el ancho según el contenido */
+}
+
+/* Hover */
+.btn-capacitacion:hover {
+    background-color: var(--color-principal-hover);
+}
   /* TIPOS DE EXTINTORES */
 .tipos-extintores {
     background-color: #f1f8e9;
