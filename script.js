@@ -1,30 +1,27 @@
-// Esperar que el DOM esté completamente cargado
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
+    // Toggle del menú hamburguesa
     const menuToggle = document.getElementById("menu-toggle");
     const navLinks = document.querySelector(".nav-links");
   
-    // Agregar el evento de clic al menú hamburguesa
-    menuToggle.addEventListener("click", function() {
-      navLinks.classList.toggle("active");
+    menuToggle?.addEventListener("click", function () {
+      navLinks?.classList.toggle("active");
     });
-  });
-
-
-
-
-//Formulario funciones
-  document.addEventListener("DOMContentLoaded", function() {
+  
+    // Validación del formulario
     const form = document.getElementById("contactForm");
+    if (!form) return;
+  
     const nombreInput = document.getElementById("nombre");
     const emailInput = document.getElementById("email");
     const mensajeInput = document.getElementById("mensaje");
+  
     const nombreError = document.getElementById("nombreError");
     const emailError = document.getElementById("emailError");
     const mensajeError = document.getElementById("mensajeError");
     const successMessage = document.getElementById("formSuccessMessage");
   
-    form.addEventListener("submit", function(event) {
-      event.preventDefault();  // Evitar que se envíe el formulario de forma tradicional
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
   
       let isValid = true;
   
@@ -53,15 +50,14 @@ document.addEventListener("DOMContentLoaded", function() {
         mensajeError.textContent = "";
       }
   
-      // Si todo es válido, mostrar mensaje de éxito
+      // Mostrar éxito
       if (isValid) {
         successMessage.style.display = "block";
-        setTimeout(function() {
+        setTimeout(function () {
           successMessage.style.display = "none";
-          form.reset();  // Resetear el formulario
-        }, 5000);  // El mensaje de éxito se oculta después de 5 segundos
+          form.reset();
+        }, 5000);
       }
     });
   });
-  
   

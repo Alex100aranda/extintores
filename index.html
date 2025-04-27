@@ -137,31 +137,39 @@
     </div>
   </section>
   
-
-  <!-- Formulario de contacto -->
 <!-- Formulario de Contacto -->
 <section class="section contacto-formulario" id="contacto" data-aos="zoom-in">
     <h2>Contáctanos</h2>
-    <form action="mailto:info@extintorespro.com" method="POST" enctype="text/plain">
+    <form id="contactForm" action="mailto:info@extintorespro.com" method="POST" enctype="text/plain">
       <div class="form-group">
         <label for="nombre">Nombre</label>
         <input type="text" id="nombre" name="nombre" required>
+        <small id="nombreError" class="error-message"></small>
       </div>
+      
       <div class="form-group">
         <label for="email">Correo electrónico</label>
         <input type="email" id="email" name="email" required>
+        <small id="emailError" class="error-message"></small>
       </div>
+      
       <div class="form-group">
         <label for="mensaje">Mensaje</label>
         <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+        <small id="mensajeError" class="error-message"></small>
       </div>
+      
       <button type="submit" class="btn">
-        <i class="fas fa-paper-plane"></i> Enviar mensaje
+        <i class="fas fa-paper-plane"></i>Enviar mensaje
       </button>
+      
+      <!-- Mensaje de éxito (inicialmente oculto) -->
+      <p id="formSuccessMessage" class="success-message" style="display: none;">¡Mensaje enviado con éxito!</p>
     </form>
-  </section>
+</section>
+
   
-  
+
 
   <!-- Mapa y datos -->
   <section class="section mapa" data-aos="fade-up">
