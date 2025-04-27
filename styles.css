@@ -23,6 +23,7 @@ body {
     padding: 0;
     background-color: var(--color-white);
     color: var(--color-texto);
+    overflow-x: hidden;
 }
   
 
@@ -32,30 +33,28 @@ h2 {
     color: var(--color-principal);
     text-align: center;
 }
-  /* ========================
-     NAVBAR
-  ======================== */
 /* ========================
-   NAVBAR
+     NAVBAR
 ======================== */
+
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
     background: #d32f2f;
     color: white;
-    padding: 10px 0;
+    padding: 10px 20px; /* Espaciado ajustado */
     z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-right: 20px; /* Ajuste de espaciado */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
 }
 
 .navbar .logo {
     font-size: 24px;
     font-weight: bold;
-    margin-left: 20px;
+    margin-left: 20px; /* Espaciado para el logo */
 }
 
 .menu-toggle {
@@ -66,6 +65,9 @@ h2 {
     align-items: center;
     height: 24px;
     width: 30px;
+    position: absolute;  /* Alineamos el botón hamburguesa al lado derecho */
+    right: 20px;  /* Margen de 20px desde el borde derecho */
+    z-index: 2000; /* Asegura que el botón quede encima de otros elementos */
 }
 
 .menu-toggle .bar {
@@ -79,7 +81,8 @@ h2 {
     list-style: none;
     display: flex;
     gap: 15px;
-    justify-content: flex-end;
+    justify-content: flex-end; /* Alineamos los enlaces al final */
+    margin-right: 20px; /* Margin to align to the right */
 }
 
 .nav-links a {
@@ -89,6 +92,7 @@ h2 {
 }
 
 @media (max-width: 768px) {
+    /* En pantallas pequeñas, el menú se posiciona con flexbox */
     .nav-links {
         position: absolute;
         top: 80px;
@@ -102,11 +106,11 @@ h2 {
     }
 
     .nav-links.active {
-        display: flex;
+        display: flex; /* Muestra el menú cuando está activo */
     }
 
     .menu-toggle {
-        display: flex;
+        display: flex; /* Muestra el botón de hamburguesa */
     }
 
     .nav-links a {
@@ -115,42 +119,19 @@ h2 {
     }
 }
 
-  
-  /* En pantallas pequeñas */
-  @media (max-width: 768px) {
-    /* El menú se oculta y se posiciona a la derecha */
+/* Ajuste adicional para pantallas grandes, asegurando que el menú esté pegado al lado derecho */
+@media (min-width: 769px) {
     .nav-links {
-      position: absolute;
-      top: 80px;
-      right: 0;
-      width: 100%;
-      background-color: #d32f2f;
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px 0;
+        justify-content: flex-end; /* Alineamos el menú a la derecha */
     }
-  
-    /* Muestra el menú cuando está activo */
-    .nav-links.active {
-      display: flex;
-    }
-  
-    .nav-links a {
-      font-size: 18px;
-      margin: 10px 0;
-    }
-  
-    /* Menú hamburguesa visible solo en móviles */
-    .menu-toggle {
-      display: flex;
-    }
-  }
-  
-  
+}
 
 
-  /* HERO CON BANNER DE FONDO */
+/* ========================
+     HERO CON BANNER DE FONDO
+======================== */
+
+/* HERO CON BANNER DE FONDO */
 .hero {
     height: 80vh;
     background-image: url('img/banner.jpeg'); /* Usa tu imagen */
@@ -162,9 +143,9 @@ h2 {
     justify-content: center;
     color: white;
     text-align: center;
-  }
-  
-  .hero-overlay {
+}
+
+.hero-overlay {
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 100%;
@@ -172,20 +153,20 @@ h2 {
     align-items: center;
     justify-content: center;
     padding: 0 20px;
-  }
-  
-  .hero-content h1 {
+}
+
+.hero-content h1 {
     font-size: 3rem;
     margin-bottom: 20px;
     font-weight: bold;
-  }
-  
-  .hero-content p {
+}
+
+.hero-content p {
     font-size: 1.3rem;
     margin-bottom: 30px;
-  }
-  
-  .btn-hero {
+}
+
+.btn-hero {
     background-color: var(--color-principal);
     padding: 14px 30px;
     border-radius: var(--radio-borde);
@@ -193,11 +174,60 @@ h2 {
     text-decoration: none;
     font-weight: bold;
     transition: background 0.3s ease;
-  }
-  
-  .btn-hero:hover {
+    display: inline-flex; /* Cambiado a inline-flex para centrar mejor el texto */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    text-align: center; /* Asegura que el texto esté centrado */
+}
+
+.btn-hero:hover {
     background-color: var(--color-principal-hover);
-  }
+}
+
+
+/* ========================
+     RESPONSIVO
+======================== */
+
+@media (max-width: 768px) {
+    .hero {
+        height: 60vh; /* Ajustamos el tamaño de la imagen en pantallas pequeñas */
+        padding: 0 15px; /* Menos padding en los laterales */
+    }
+
+    .hero-content h1 {
+        font-size: 2rem; /* Reducir tamaño de fuente en pantallas pequeñas */
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .btn-hero {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 50vh; /* Aún más pequeña en pantallas más pequeñas */
+    }
+
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .btn-hero {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
   
  /* SERVICIOS */
 .servicios {
@@ -604,8 +634,8 @@ h2 {
     font-size: 16px;
   }
   
- /* Responsivo */
-@media (max-width: 768px) {
+  /* Responsivo */
+  @media (max-width: 768px) {
     .contacto-formulario h2 {
       font-size: 2rem;
     }
@@ -616,47 +646,38 @@ h2 {
   
     .contacto-formulario form {
       padding: 20px;
-      width: 100%; /* Asegura que el formulario ocupe el 100% del contenedor */
-      box-sizing: border-box; /* Incluye el padding dentro del tamaño total */
-      max-width: 100%; /* Limita el ancho máximo al 100% */
     }
   
     .form-group label {
       font-size: 14px;
     }
   
-    input, textarea {
-      width: 100%; /* Asegura que los campos de entrada ocupen todo el ancho disponible */
-      box-sizing: border-box; /* Incluye el padding dentro del tamaño total */
-    }
-  
     /* Estilo para el botón de envío con ícono */
-    .btn {
-      padding: 14px 30px;
-      background-color: var(--color-principal);
-      color: white;
-      border: none;
-      border-radius: var(--radio-borde);
-      font-weight: bold;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease;
-      align-self: center;
-      display: flex; /* Hacemos que el botón sea flexible */
-      align-items: center; /* Centramos el ícono y texto verticalmente */
-      gap: 10px; /* Espacio entre el ícono y el texto */
-      width: 100%; /* Asegura que el botón ocupe el 100% del contenedor */
-      box-sizing: border-box; /* Incluye el padding dentro del tamaño total */
-    }
+.btn {
+    padding: 14px 30px;
+    background-color: var(--color-principal);
+    color: white;
+    border: none;
+    border-radius: var(--radio-borde);
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    align-self: center;
+    display: flex; /* Hacemos que el botón sea flexible */
+    align-items: center; /* Centramos el ícono y texto verticalmente */
+    gap: 10px; /* Espacio entre el ícono y el texto */
+  }
   
-    .btn i {
-      font-size: 20px; /* Tamaño del ícono */
-    }
+  .btn i {
+    font-size: 20px; /* Tamaño del ícono */
+  }
   
-    .btn:hover {
-      background-color: var(--color-principal-hover);
-      transform: translateY(-2px);
-    }
+  .btn:hover {
+    background-color: var(--color-principal-hover);
+    transform: translateY(-2px);
+  }
+  
   }
   
   
